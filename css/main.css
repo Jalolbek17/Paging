@@ -1,0 +1,128 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font: 20px sans-serif;
+}
+
+@media screen and (max-width: 565px) {
+  * {
+    font-size: 18px;
+  }
+}
+
+/* MAIN */
+body {
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #FFBE76;
+  padding: 10rem 2rem 5rem 2rem;
+}
+
+@media screen and (max-width: 565px) {
+  body {
+    padding-top: 6rem;
+  }
+}
+
+.progress {
+  cursor: progress !important;
+}
+
+.container {
+  max-width: 750px;
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.container .cards-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 50% 50%;
+      grid-template-columns: 50% 50%;
+  overflow: hidden;
+  -webkit-transition: height .4s;
+  transition: height .4s;
+  height: 0px;
+}
+
+@media screen and (max-width: 565px) {
+  .container .cards-container {
+    -ms-grid-columns: 100%;
+        grid-template-columns: 100%;
+  }
+}
+
+.container .cards-container .card {
+  white-space: nowrap;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 1.5rem;
+  background: #fff;
+  border-radius: 7px;
+  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 17px;
+}
+
+.container .cards-container .card:nth-child(odd) {
+  margin-right: .75rem;
+}
+
+@media screen and (max-width: 565px) {
+  .container .cards-container .card:nth-child(odd) {
+    margin-right: unset;
+  }
+}
+
+.container .load-btn {
+  margin-top: .4rem;
+  width: 100%;
+  outline: none;
+  border: none;
+  padding: 1.05rem;
+  background-color: #F1F1F1;
+  border-radius: 7px;
+  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  opacity: 1;
+  cursor: pointer;
+  -webkit-transition: background-color .1s, -webkit-transform .07s;
+  transition: background-color .1s, -webkit-transform .07s;
+  transition: background-color .1s, transform .07s;
+  transition: background-color .1s, transform .07s, -webkit-transform .07s;
+}
+
+.container .load-btn:hover {
+  background-color: #E5E5E5;
+}
+
+.container .load-btn:active {
+  -webkit-transform: translateY(2px);
+          transform: translateY(2px);
+}
+
+.container .load-btn:disabled {
+  opacity: .85 !important;
+  cursor: not-allowed;
+}
+
+.container .load-btn:disabled:hover {
+  background-color: #F1F1F1;
+}
+
+.container .load-btn.progress:disabled {
+  opacity: .7 !important;
+  cursor: progress !important;
+}
+/*# sourceMappingURL=main.css.map */

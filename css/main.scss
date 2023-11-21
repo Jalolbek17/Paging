@@ -1,0 +1,110 @@
+@mixin mobile {
+    @media screen and (max-width: 565px) {
+        @content;
+    }
+}
+
+/* RESET */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font: 20px sans-serif;
+
+    @include mobile {
+        font-size: 18px;
+    }
+}
+
+/* MAIN */
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    background-color: #FFBE76;
+    padding: 10rem 2rem 5rem 2rem;
+
+    @include mobile {
+        padding-top: 6rem;
+    }
+}
+
+.progress {
+    cursor: progress !important;
+}
+
+.container {
+    max-width: 750px;
+    width: 100%;
+    height: fit-content;
+
+    .cards-container {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        overflow: hidden;
+        transition: height .4s;
+        height: 0px;
+
+        @include mobile {
+            grid-template-columns: 100%;
+        }
+        
+        .card {
+            white-space: nowrap;
+            height: fit-content;
+            padding: 1.5rem;
+            background: #fff;
+            border-radius: 7px;
+            box-shadow: 0 2px 5px rgba(0,0,0,.1);
+            margin-bottom: 17px;
+
+            &:nth-child(odd) {
+                margin-right: .75rem;
+            }
+
+            @include mobile {
+                &:nth-child(odd) {
+                    margin-right: unset;
+                }
+            }
+        }
+    }
+    
+    .load-btn {
+        margin-top: .4rem;
+        width: 100%;
+        outline: none;
+        border: none;
+        padding: 1.05rem;
+        background-color: #F1F1F1;
+        border-radius: 7px;
+        box-shadow: 0 2px 5px rgba(0,0,0,.1);
+        opacity: 1;
+        cursor: pointer;
+        transition: background-color .1s, transform .07s;
+        
+        &:hover {
+            background-color: #E5E5E5;
+        }
+
+        &:active {
+            transform: translateY(2px);
+        }
+        
+        &:disabled {
+            opacity: .85 !important;
+            cursor: not-allowed;
+            
+            &:hover {
+                background-color: #F1F1F1;
+            }
+        }
+        
+        &.progress:disabled {
+            opacity: .7 !important;
+            cursor: progress !important;
+        }
+    }
+}
